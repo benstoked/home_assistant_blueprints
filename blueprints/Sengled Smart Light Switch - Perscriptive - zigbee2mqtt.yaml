@@ -145,7 +145,7 @@ action:
       sequence:
       - service: light.turn_on
         data:
-          brightness_pct: !input 'default_on_value'
+          brightness: !input 'default_on_value'
           transition: !input 'fade_duration'
         target:
           entity_id: !input 'target_light'
@@ -155,7 +155,7 @@ action:
       sequence:
       - service: light.turn_on
         data:
-          brightness_pct: 100
+          brightness: 100
         entity_id: !input 'target_light'
     - conditions:
       - condition: trigger
@@ -163,7 +163,7 @@ action:
       sequence:
       - service: light.turn_on
         data:
-          brightness_pct: !input 'default_on_value'
+          brightness: !input 'default_on_value'
           transition: !input 'fade_duration'
         target:
           entity_id: !input 'target_light'
@@ -174,7 +174,7 @@ action:
       sequence:
       - service: light.turn_off
         data:
-          brightness_pct: !input 'default_on_value'
+          brightness: !input 'default_on_value'
           transition: !input 'fade_duration'
         target:
           entity_id: !input 'target_light'
