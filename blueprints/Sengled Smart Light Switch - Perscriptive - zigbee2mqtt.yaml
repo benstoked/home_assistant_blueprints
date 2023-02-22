@@ -146,7 +146,9 @@ action:
       - service: light.turn_on
         data:
           brightness_pct: !input 'default_on_value'
-        entity_id: !input 'target_light'
+          transition: !input 'fade_duration'
+        target:
+          entity_id: !input 'target_light'
     - conditions:
       - condition: trigger
         id: press-on_double
@@ -170,9 +172,13 @@ action:
       - condition: trigger
         id: press-off
       sequence:
-      - service: light.turn_off
-        data: {}
-        entity_id: !input 'target_light'
+      - service: light.off
+        data:
+          brightness_pct: !input 'default_on_value'
+          transition: !input 'fade_duration'
+        target:
+          entity_id: !input 'target_light'
+        
     - conditions:
       - condition: trigger
         id: press-off_double
