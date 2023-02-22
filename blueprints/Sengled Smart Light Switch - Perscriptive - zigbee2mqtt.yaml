@@ -5,9 +5,9 @@ blueprint:
      - This only controls the brighness of the light (i.e. color and color-temp are left unchanged)
      - The only thing that MUST be configured, are the 'Light Switch', and target 'Lights', however, much else is configurable.
      - &copy; below implies that the value is configurable.
-    * on: Immediately to 50% &copy;
+    * on: Fade to 50% &copy;
     * double-on: Immediately to 100%
-    * off: Immediately off.
+    * off: Fade off.
     * double-off: Immediately off. (looking for suggestions for better use of this.)
     * up: Immediately +10% &copy;
     * down: Immediately -10% &copy;
