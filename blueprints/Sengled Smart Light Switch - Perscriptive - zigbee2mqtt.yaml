@@ -172,7 +172,7 @@ action:
       - condition: trigger
         id: press-off
       sequence:
-      - service: light.off
+      - service: light.turn_off
         data:
           brightness_pct: !input 'default_on_value'
           transition: !input 'fade_duration'
